@@ -10,3 +10,5 @@ SUPPORTED HASHES = md5, sha256, sha384, sha224.
 Then Finally, You need to specifiy the name of the wordlist you want to convert. 
 
 IMPORTANT - Make sure that the wordlist is in the same directory as these files. 
+
+There is another file called `hash_cracking_wordlist.py` that python program will work the same as the `hashcracking.py` but instead it does not need a rainbow table to crack. All you have to do is just have a good wordlist of password in your directory. `hash_cracking_wordlist.py` will convert passwords inside of the worlist to the required hash and then compare it to the input hash. Once, it will get a match of the hash from the wordlist. It will print it out the matched hash password.
