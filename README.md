@@ -8,9 +8,9 @@ When you are going to use rainbow_tableGenerator.py, You need to specify the fil
 Then you have to specify the name the name of the wordlist you want to create.
 IMPORTANT - Use the following names for the rainbow table that you are going to generate with different hashes 
 
-md5 = rainbow_table_md5.txt
-sha224 = rainbow_table_sha224.txt
-sha256 = rainbow_table_sha256.txt
-sha384 = rainbow_table_sha384.txt
+md5 = rainbow_table_md5.txt; 
+sha224 = rainbow_table_sha224.txt; 
+sha256 = rainbow_table_sha256.txt; 
+sha384 = rainbow_table_sha384.txt; 
 
 Finally, You have to specify what kind of hash you want to use (md5, sha224, sha256, sha384)
