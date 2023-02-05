@@ -1,10 +1,6 @@
 import hashlib
 
-def generate_rainbow_table(wordlist_file):
-    file_name = input("Your File Name (without .txt): ")
-    # Get the type of hash to use from the user
-    hash_type = input("Enter the type of hash to use (sha384, sha256, sha224, sha1, or md5): ").lower()
-    
+def generate_rainbow_table(wordlist_file, hash_type):
     # Create the hash function based on the user input
     if hash_type == 'sha384':
         hash_function = hashlib.sha384
@@ -24,10 +20,10 @@ def generate_rainbow_table(wordlist_file):
     with open(wordlist_file, 'r') as f:
         # Read the contents of the wordlist file
         words = f.readlines()
-    
+
     # Create an empty list to store the rainbow table entries
     rainbow_table = []
-    
+
     # Loop through each word in the wordlist
     for word in words:
         # Strip the newline character from the word
@@ -41,12 +37,12 @@ def generate_rainbow_table(wordlist_file):
         
         # Add the word and its hash to the rainbow table list
         rainbow_table.append(f'{word}:{hash_hex}')
-    
+
     # Write the rainbow table to a new file
-    with open(f'{file_name}.txt', 'w') as f:
+    with open(f'rainbow_table_{hash_type}.txt', 'w') as f:
         for entry in rainbow_table:
             f.write(entry + '\n')
 
-# Call the generate_rainbow_table function
+hash_type = input("Enter the type of hash to use (sha384, sha256, sha224, sha1, or md5): ").lower()
 wordlist_to_be_converted = input("Enter the name of the wordlist you want to convert: ")
-generate_rainbow_table(wordlist_to_be_converted)
+generate_rainbow_table(wordlist_to_be_converted, hash_type)
